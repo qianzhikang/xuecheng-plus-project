@@ -1,7 +1,11 @@
 package com.xuecheng.content.service;
 
+import com.xuecheng.content.model.dto.SaveTeachplanDto;
+import com.xuecheng.content.model.dto.TeachplanDto;
 import com.xuecheng.content.model.po.Teachplan;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
 * @author qianzhikang
@@ -10,4 +14,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface TeachplanService extends IService<Teachplan> {
 
+    List<TeachplanDto> findTeachplanTree(Long courseId);
+
+    void saveTeachplan(SaveTeachplanDto teachplanDto);
+
+    void deleteTeachplan(Long teachplanId);
+
+    void orderByTeachplan(String moveType, Long teachplanId);
 }

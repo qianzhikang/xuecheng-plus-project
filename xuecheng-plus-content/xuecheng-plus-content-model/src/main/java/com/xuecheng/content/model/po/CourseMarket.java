@@ -30,13 +30,13 @@ public class CourseMarket implements Serializable {
      * 现价
      */
     @TableField(value = "price")
-    private Double price;
+    private Float price;
 
     /**
      * 原价
      */
     @TableField(value = "original_price")
-    private Double originalPrice;
+    private Float originalPrice;
 
     /**
      * 咨询qq
