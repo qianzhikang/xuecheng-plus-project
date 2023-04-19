@@ -76,7 +76,3 @@ public class CourseTeacherServiceImpl extends ServiceImpl<CourseTeacherMapper, C
         return courseTeacherMapper.selectById(courseTeacher.getId());
     }
 }
-
-
-
-
