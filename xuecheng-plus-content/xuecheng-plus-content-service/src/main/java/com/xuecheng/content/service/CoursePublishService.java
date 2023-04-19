@@ -16,5 +16,4 @@ public interface CoursePublishService extends IService<CoursePublish> {
      * @return com.xuecheng.content.model.dto.CoursePreviewDto
      */
     CoursePreviewDto getCoursePreviewInfo(Long courseId);
-
 }
