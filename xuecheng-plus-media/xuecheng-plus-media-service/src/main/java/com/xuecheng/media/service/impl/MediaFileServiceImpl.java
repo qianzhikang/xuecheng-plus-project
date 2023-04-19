@@ -76,7 +76,15 @@ public class MediaFileServiceImpl implements MediaFileService {
 
         //构建查询条件对象
         LambdaQueryWrapper<MediaFiles> queryWrapper = new LambdaQueryWrapper<>();
-
+        if (queryMediaParamsDto.getFilename() != null){
+            queryWrapper.like(MediaFiles::getFilename,queryMediaParamsDto.getFilename());
+        }
+        if (queryMediaParamsDto.getFileType() != null){
+            queryWrapper.like(MediaFiles::getFileType,queryMediaParamsDto.getFileType());
+        }
+        if (queryMediaParamsDto.getAuditStatus() != null){
+            queryWrapper.like(MediaFiles::getAuditStatus,queryMediaParamsDto.getAuditStatus());
+        }
         //分页对象
         Page<MediaFiles> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
         // 查询数据内容获得结果
@@ -342,6 +350,11 @@ public class MediaFileServiceImpl implements MediaFileService {
         // 清理分片文件
         clearChunkFiles(chunkFileFolderPath,chunkTotal);
         return RestResponse.success(true);
+    }
+
+    @Override
+    public MediaFiles getFileById(String mediaId) {
+        return mediaFilesMapper.selectById(mediaId);
     }
 
 
