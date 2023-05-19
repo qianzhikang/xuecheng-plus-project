@@ -22,4 +22,12 @@ public interface CoursePublishService extends IService<CoursePublish> {
      * @param courseId  课程id
      */
     void commitAudit(Long companyId,Long courseId);
+
+
+    /**
+     * @description 课程发布接口
+     * @param companyId 机构id
+     * @param courseId 课程id
+     */
+    void publish(Long companyId,Long courseId);
 }
